@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+form {
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    margin: 0 auto 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f8c291;
+    border-radius: 8px;
+    background-color: #fffaf2;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #e17055;
+    box-shadow: 0 0 6px #fab1a0;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff7675, #fd79a8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #fd79a8, #ff7675);
+    transform: scale(1.03);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f0f8ff;
+}
+
+a {
+    color: #ff6b81;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #d63031;
+}
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #00b894;
+    font-size: 17px;
+}

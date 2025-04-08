@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Studnet</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <h2>Register New Student</h2>
+    <form id="registerForm">
+        <input type="hidden" name="action" value="register">
+        <div>
+            <label> Name:</label>
+            <input type="text" name="StudName" required>
+        </div>
+        
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        
+        <button type="submit">Register</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        const baseUrl = window.location.pathname.includes('Student_H_MGT') ? '/Student_H_MGT' : '';
+        const StudentsUrl = `${baseUrl}/Students`;
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch(StudentsUrl, {
+                method: 'POST',
+                body: new URLSearchParams(formData), // Convert FormData to URL-encoded string
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' // Set correct content type
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const message = document.getElementById('message');
+                if (data.error) {
+                    message.style.color = 'red';
+                    message.textContent = data.error === 'Invalid action' ? 'Invalid' : data.error;
+                } else {
+                    message.style.color = 'green';
+                    message.textContent = data.message;
+                    this.reset();
+                    setTimeout(() => window.location.href = 'displayStu.html', 1000);
+                }
+            })
+            .catch(error => {
+                document.getElementById('message').textContent = 'Error: ' + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
